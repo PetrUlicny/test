@@ -101,6 +101,20 @@
 }
 
 /* Hover efekty na rozcestníku pro desktop */
+@media (max-width:768px) {
+    .split-content h1 {
+        font-size:2rem;
+    }
+
+    .split-content p {
+        font-size:0.8rem;
+    }
+
+    .split-side {
+        padding:0;
+    }
+}
+
 @media (min-width: 768px) {
     .split-layout { 
         flex-direction: row; 
