@@ -103,6 +103,22 @@
 
 /* Hover efekty na rozcestníku pro desktop */
 
+@media (max-width: 767px) {
+    .split-side {
+        padding: 1rem; /* Zmenšíme vnitřní okraje na polovinu */
+        min-height: auto; /* Dovolíme obsahu, aby se přirozeně vešel */
+        flex: 1;
+    }
+    .split-content h1 {
+        font-size: 2.2rem; /* Zmenšíme obří nadpis, ať se neláme do tolika řádků */
+        margin-bottom: 0.5rem;
+    }
+    .split-content p {
+        margin-bottom: 1.2rem; /* Zmenšíme mezeru pod textem */
+        font-size: 0.95rem;
+    }
+}
+
 @media (min-width: 768px) {
     .split-layout { 
         flex-direction: row; 
