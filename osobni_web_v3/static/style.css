@@ -1,3 +1,4 @@
+/* --- TLAČÍTKA A ZVÝRAZNĚNÍ --- */
 .btn { 
     display: inline-block; 
     padding: 0.8rem 1.8rem; 
@@ -38,7 +39,6 @@
     box-shadow: 0 0 20px var(--doucovani-glow), inset 0 0 10px rgba(0,0,0,0.2); 
 }
 
-/* --- Zvýraznění textu --- */
 .highlight-weby-color { 
     color: var(--weby-main); 
     text-shadow: 0 0 8px var(--weby-glow); 
@@ -49,30 +49,67 @@
     text-shadow: 0 0 8px var(--doucovani-glow); 
 }
 
-/* --- ROZCESTNÍK --- */
-
+/* --- ROZCESTNÍK (ZÁKLAD A MOBIL) --- */
 .home-page { 
-    min-height: 100vh;
-    overflow-x:hidden;
+    min-height: 100%;
+    overflow-x: hidden;
 }
 
 .split-layout { 
     display: flex; 
-    min-height: 100vh;
+    min-height:100vh;
     flex-direction: column; 
     position: relative; 
 }
 
+/* Skleněný přepínač pro mobil */
+.mobile-toggle {
+    display: flex;
+    position: absolute;
+    top: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 30px;
+    padding: 5px;
+    backdrop-filter: blur(10px);
+}
+
+.toggle-btn {
+    background: transparent;
+    border: none;
+    color: #888;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.toggle-btn.active {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.15);
+}
+
 .split-side { 
     flex: 1; 
-    display: flex; 
+    display: none; 
     align-items: center; 
     justify-content: center; 
-    padding: 1.5rem 1rem;
+    padding: 2rem; 
     text-align: center; 
     transition: all 0.4s ease; 
     position: relative;
-    min-height: 48vh;
+    min-height: 100dvh; 
+}
+
+.split-side.active-tab {
+    display: flex;
 }
 
 .split-content { 
@@ -94,96 +131,37 @@
 
 .tutoring-side { 
     background: linear-gradient(135deg, #251204 0%, var(--bg-main) 100%); 
-    border-bottom: 1px solid var(--border-color);
 }
 
 .web-side { 
     background: linear-gradient(135deg, var(--bg-main) 0%, #0a1a1a 100%); 
 }
 
-/* Hover efekty na rozcestníku pro desktop */
-
+/* --- DESKTOP (od 768px) --- */
 @media (min-width: 768px) {
+    .mobile-toggle {
+        display: none;
+    }
+
     .split-layout { 
         flex-direction: row; 
-        height: 100vh;
     }
 
     .split-side {
-        min-height: auto;
+        display: flex !important; /* Na PC vždy zobrazí obě sekce */
     }
 
     .tutoring-side { 
-        border-bottom: none; 
         border-right: 1px solid var(--border-color); 
     }
+    
     .tutoring-side:hover { 
         flex: 1.1; 
         background: linear-gradient(135deg, #401c04 0%, var(--bg-main) 100%); 
     }
+    
     .web-side:hover { 
         flex: 1.1; 
         background: linear-gradient(135deg, var(--bg-main) 0%, #0d2424 100%); 
-    }
-}
-
-/* --- MOBILNÍ PŘEPÍNAČ --- */
-.mobile-toggle {
-    display: none; /* Na PC skryto */
-}
-
-@media (max-width: 767px) {
-    /* Obal přepínače (skleněný efekt nahoře uprostřed) */
-    .mobile-toggle {
-        display: flex;
-        position: absolute;
-        top: 25px;
-        left: 50%;
-        transform: translateX(-50%);
-        z-index: 10;
-        background: rgba(255, 255, 255, 0.05);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        border-radius: 30px;
-        padding: 5px;
-        backdrop-filter: blur(10px);
-    }
-
-    /* Samotná tlačítka přepínače */
-    .toggle-btn {
-        background: transparent;
-        border: none;
-        color: #888;
-        padding: 10px 20px;
-        border-radius: 25px;
-        font-weight: bold;
-        font-size: 0.9rem;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-    }
-
-    /* Aktivní stav tlačítka */
-    .toggle-btn.active {
-        color: #fff;
-        background: rgba(255, 255, 255, 0.15);
-    }
-
-    /* Skrytí sekcí na mobilu */
-    .split-side {
-        display: none; 
-        height: 100vh; /* Protože je tam jen jedna, může bezpečně zabrat 100% výšky! */
-    }
-
-    /* Zobrazení pouze aktivní sekce */
-    .split-side.active-tab {
-        display: flex;
-    }
-}
-
-@media (min-width: 768px) {
-    /* Pojistka pro PC: Obě sekce musí být vždy vidět, i když JS mění třídy */
-    .split-side {
-        display: flex !important;
     }
 }
