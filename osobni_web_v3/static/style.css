@@ -58,7 +58,7 @@
 
 .split-layout { 
     display: flex; 
-    min-height: 100vh; 
+    min-height: 100vh;
     flex-direction: column; 
     position: relative; 
 }
@@ -72,6 +72,7 @@
     text-align: center; 
     transition: all 0.4s ease; 
     position: relative;
+    min-height: 50vh;
 }
 
 .split-content { 
@@ -101,24 +102,17 @@
 }
 
 /* Hover efekty na rozcestníku pro desktop */
-@media (max-width:768px) {
-    .split-content h1 {
-        font-size:2rem;
-    }
-
-    .split-content p {
-        font-size:0.8rem;
-    }
-
-    .split-side {
-        padding:0;
-    }
-}
 
 @media (min-width: 768px) {
     .split-layout { 
         flex-direction: row; 
+        height: 100vh;
     }
+
+    .split-side {
+        min-height: auto;
+    }
+
     .tutoring-side { 
         border-bottom: none; 
         border-right: 1px solid var(--border-color); 
