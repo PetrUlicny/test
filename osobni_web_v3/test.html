@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="/static/variable.css">
+
+
+    <style>
+/* =========================================
+   ZÁKLADNÍ STYLY (Mobil) - Pod sebou
+   ========================================= */
+.services-list-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.service-row {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 35px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Jemná dělící linka */
+    transition: background-color 0.3s ease, padding-left 0.3s ease;
+}
+
+/* Poslední řádek nepotřebuje čáru dole */
+.service-row:last-child {
+    border-bottom: none;
+}
+
+.service-row:hover {
+    background-color: rgba(0, 255, 204, 0.03); /* Velmi jemný tyrkysový nádech po najetí */
+}
+
+.row-title h3 {
+    font-size: 1.8rem;
+    color: var(--text-main);
+    margin: 0;
+}
+
+.badge {
+    display: inline-block;
+    font-size: 0.75rem;
+    color: var(--weby-main);
+    border: 1px solid var(--weby-main);
+    padding: 3px 10px;
+    border-radius: 20px;
+    margin-top: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Zvýraznění hlavního řádku (Firemní web) */
+.service-row.highlighted .row-title h3 {
+    color: var(--weby-main);
+    text-shadow: 0 0 15px rgba(0, 255, 204, 0.3);
+}
+
+.row-features {
+    color: var(--text-muted);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.separator {
+    color: var(--weby-main);
+    margin: 0 8px;
+    opacity: 0.5;
+}
+
+/* Styly pro tlačítka v řádcích */
+.row-action {
+    margin-top: 10px;
+}
+
+.btn-row {
+    background: transparent;
+    color: var(--text-main);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 10px 25px;
+    border-radius: 30px; /* Zakulacená elegantní tlačítka */
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-row.btn-glow {
+    border-color: var(--weby-main);
+    color: var(--weby-main);
+}
+
+.btn-row:hover {
+    background: var(--text-main);
+    color: var(--bg-main);
+    border-color: var(--text-main);
+}
+
+.btn-row.btn-glow:hover {
+    background: var(--weby-main);
+    color: var(--bg-main);
+    box-shadow: 0 0 20px rgba(0, 255, 204, 0.4);
+}
+
+/* =========================================
+   PC ZOBRAZENÍ - Plné řádky
+   ========================================= */
+@media (min-width: 992px) {
+    .service-row {
+        flex-direction: row; /* Poskládá Název, Text a Tlačítko do jednoho řádku */
+        align-items: center;
+        justify-content: space-between;
+        padding: 40px 20px; /* Na PC přidáme vnitřní odsazení */
+        border-radius: 12px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .service-row:hover {
+        padding-left: 30px; /* Jemně odskočí text doprava při najetí */
+    }
+
+    .row-title {
+        flex: 0 0 25%; /* Název zabere 25 % šířky */
+    }
+
+    .row-features {
+        flex: 1; /* Vlastnosti zaberou zbytek místa uprostřed */
+        text-align: center;
+    }
+
+    .row-action {
+        flex: 0 0 20%; /* Tlačítko vpravo má svou pevnou zónu */
+        text-align: right;
+        margin-top: 0;
+    }
+}
+    </style>
+</head>
+
+<body>
+<section id="sluzby" class="page-section bg-black">
+    <!-- Vizuálně skrytý nadpis pro SEO -->
+    <h2 class="visually-hidden">Co nabízím</h2>
+    
+    <div class="services-list-container">
+        
+        <!-- Služba 1 -->
+        <div class="service-row">
+            <div class="row-title">
+                <h3>Jednostránkový Web</h3>
+            </div>
+            <div class="row-features">
+                <span>Rychlý rozjezd</span>
+                <span class="separator">•</span>
+                <span>Landing Pages</span>
+                <span class="separator">•</span>
+                <span>Základní SEO</span>
+            </div>
+            <div class="row-action">
+                <button class="btn-row">Získat web</button>
+            </div>
+        </div>
+
+        <!-- Služba 2 (Zvýrazněná) -->
+        <div class="service-row highlighted">
+            <div class="row-title">
+                <h3>Firemní Web</h3>
+                <span class="badge">Nejoblíbenější</span>
+            </div>
+            <div class="row-features">
+                <span>Komplexní identita</span>
+                <span class="separator">•</span>
+                <span>Více podstránek</span>
+                <span class="separator">•</span>
+                <span>Pokročilé SEO</span>
+            </div>
+            <div class="row-action">
+                <button class="btn-row btn-glow">Navrhnout web</button>
+            </div>
+        </div>
+
+        <!-- Služba 3 -->
+        <div class="service-row">
+            <div class="row-title">
+                <h3>Obsahový Web</h3>
+            </div>
+            <div class="row-features">
+                <span>Správa blogů</span>
+                <span class="separator">•</span>
+                <span>Obsahové sekce</span>
+                <span class="separator">•</span>
+                <span>Sociální sítě</span>
+            </div>
+            <div class="row-action">
+                <button class="btn-row">Získat web</button>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<script>
+    const serviceItems = document.querySelectorAll('.service-item');
+    const detailContents = document.querySelectorAll('.detail-content');
+
+    serviceItems.forEach(item => {
+        // Zareaguje na najetí myší (PC) i kliknutí (Mobil)
+        item.addEventListener('mouseenter', () => activateService(item));
+        item.addEventListener('click', () => activateService(item));
+    });
+
+    function activateService(hoveredItem) {
+        // 1. Zjistíme ID cílového obsahu
+        const targetId = hoveredItem.getAttribute('data-target');
+
+        // 2. Odstraníme třídu 'active' ze všech názvů a přidáme ji jen tomu aktuálnímu
+        serviceItems.forEach(i => i.classList.remove('active'));
+        hoveredItem.classList.add('active');
+
+        // 3. Skryjeme všechny detaily a zobrazíme jen ten správný
+        detailContents.forEach(content => {
+            content.classList.remove('active');
+            if (content.id === targetId) {
+                content.classList.add('active');
+            }
+        });
+    }
+</script>
+</body>
+
+</html>

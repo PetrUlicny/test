@@ -1,0 +1,150 @@
+:root {
+    --bg-main: #0a0a0f;
+    --bg-card: #1a1a24;
+    --text-main: #e2e8f0;
+    --text-muted: #94a3b8;
+    --weby-main: #00ffcc;
+    --weby-glow: rgba(0, 255, 204, 0.4);
+    --doucovani-main: #ff6a00;
+    --doucovani-glow: rgba(255, 106, 0, 0.4);
+    --border-color: #2a2a35;
+}
+
+* { 
+    box-sizing: border-box; 
+    margin: 0; 
+    padding: 0; 
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body { 
+    font-family: 'Segoe UI', sans-serif; 
+    line-height: 1.6; 
+    color: var(--text-main); 
+    background-color: var(--bg-main);
+}
+
+p { 
+    color: var(--text-muted); 
+}
+
+h1,h2,h3 {
+    color: var(--text-main);
+    margin-bottom: 1rem; 
+}
+
+a {
+    text-decoration: none;
+    color: var(--text-main);
+}
+
+/* --- NAVIGACE --- */
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgba(11, 12, 16, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 10px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.logo img {
+    height: 50px; 
+    width: auto;
+    max-width: 100%;
+    object-fit: contain; 
+    transform: translateY(1.5px);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+nav ul li a {
+    font-weight: 600;
+    font-size: 14px;
+    text-transform: uppercase;
+    transition: 0.5s;
+}
+
+/* --- KONTAKT --- */
+
+.contact {
+    padding: 100px 50px;
+    background-color: var(--bg-card);
+    text-align: center;
+}
+
+.contact-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.contact-image img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 50%;
+    transition: 0.3s ease-out;
+}
+
+.contact-image img:hover {
+    transform:scale(1.05);
+}
+
+.contact-content h3 {
+    margin-top: 20px;
+}
+
+.contact-content p {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+}
+
+.contact-content .subtitle {
+    margin-top: 20px;
+    font-size: 13px;
+}
+
+
+
+/* --- Footer --- */
+
+footer {
+    text-align: center;
+    padding: 30px;
+    background-color: var(--bg-main);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    font-size: 0.9rem;
+}
+
+.social-content {
+    display: flex;
+    gap: 30px;
+}
+
+.social-content img {
+    width: 60px;
+    transition: 0.3s ease-out;
+}
+
+.social-content img:hover {
+    transform: scale(1.05)
+}

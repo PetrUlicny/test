@@ -1,0 +1,121 @@
+.btn { 
+    display: inline-block; 
+    padding: 0.8rem 1.8rem; 
+    text-decoration: none; 
+    border-radius: 4px; 
+    font-weight: bold; 
+    transition: 0.3s; 
+    cursor: pointer; 
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.btn-weby-color { 
+    background: transparent; 
+    color: var(--weby-main); 
+    border: 2px solid var(--weby-main);
+    box-shadow: 0 0 10px var(--weby-glow);
+}
+
+.btn-weby-color:hover { 
+    background: var(--weby-main); 
+    color: var(--bg-main); 
+    box-shadow: 0 0 20px var(--weby-glow), inset 0 0 10px rgba(0,0,0,0.2); 
+}
+
+.btn-doucovani-color { 
+    background: transparent; 
+    color: var(--doucovani-main); 
+    border: 2px solid var(--doucovani-main);
+    box-shadow: 0 0 10px var(--doucovani-glow);
+}
+
+.btn-doucovani-color:hover { 
+    background: var(--doucovani-main); 
+    color: #fff; 
+    box-shadow: 0 0 20px var(--doucovani-glow), inset 0 0 10px rgba(0,0,0,0.2); 
+}
+
+/* --- Zvýraznění textu --- */
+.highlight-weby-color { 
+    color: var(--weby-main); 
+    text-shadow: 0 0 8px var(--weby-glow); 
+}
+
+.highlight-doucovani-color { 
+    color: var(--doucovani-main); 
+    text-shadow: 0 0 8px var(--doucovani-glow); 
+}
+
+/* --- ROZCESTNÍK --- */
+
+.home-page { 
+    min-height: 100%;
+    overflow-x:hidden;
+}
+
+.split-layout { 
+    display: flex; 
+    height: 100vh; 
+    flex-direction: column; 
+    position: relative; 
+}
+
+.split-side { 
+    flex: 1; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    padding: 2rem; 
+    text-align: center; 
+    transition: all 0.4s ease; 
+    position: relative;
+}
+
+.split-content { 
+    max-width: 400px; 
+    position: relative; 
+    z-index: 2; 
+}
+
+.split-content h1 { 
+    font-size: 3rem; 
+    margin-bottom: 1rem; 
+    line-height: 1.2; 
+}
+
+.split-content p { 
+    margin-bottom: 2.5rem; 
+    font-size: 1.1rem; 
+}
+
+.tutoring-side { 
+    background: linear-gradient(135deg, #251204 0%, var(--bg-main) 100%); 
+    border-bottom: 1px solid var(--border-color);
+}
+
+.web-side { 
+    background: linear-gradient(135deg, var(--bg-main) 0%, #0a1a1a 100%); 
+}
+
+/* Hover efekty na rozcestníku pro desktop */
+@media (min-width: 768px) {
+    .split-layout { 
+        flex-direction: row; 
+    }
+    .tutoring-side { 
+        border-bottom: none; 
+        border-right: 1px solid var(--border-color); 
+    }
+    .tutoring-side:hover { 
+        flex: 1.1; 
+        background: linear-gradient(135deg, #401c04 0%, var(--bg-main) 100%); 
+    }
+    .web-side:hover { 
+        flex: 1.1; 
+        background: linear-gradient(135deg, var(--bg-main) 0%, #0d2424 100%); 
+    }
+}
+
