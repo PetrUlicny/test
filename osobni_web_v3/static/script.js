@@ -68,25 +68,28 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 
+
     function switchTab(tabName) {
-        // Získáme elementy
         const tutoringSection = document.getElementById('tutoring-section');
         const webSection = document.getElementById('web-section');
         const btnTutoring = document.getElementById('btn-tutoring');
         const btnWeb = document.getElementById('btn-web');
+        const toggleContainer = document.getElementById('mobile-toggle-container'); // Chytíme obal
 
-        // Resetujeme všechny třídy
+        // Nejdřív všechno natvrdo "vypneme"
         tutoringSection.classList.remove('active-tab');
         webSection.classList.remove('active-tab');
         btnTutoring.classList.remove('active');
         btnWeb.classList.remove('active');
 
-        // Přidáme aktivní třídu podle toho, co uživatel vybral
+        // Zapneme to, co uživatel vybral a případně posuneme jezdce
         if (tabName === 'tutoring') {
             tutoringSection.classList.add('active-tab');
             btnTutoring.classList.add('active');
-        } else if (tabName === 'web') {
+            toggleContainer.classList.remove('web-active'); // Jezdec skočí doleva
+        } else {
             webSection.classList.add('active-tab');
             btnWeb.classList.add('active');
+            toggleContainer.classList.add('web-active'); // Jezdec přepluje doprava
         }
     }
