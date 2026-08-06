@@ -127,3 +127,63 @@
     }
 }
 
+/* --- MOBILNÍ PŘEPÍNAČ --- */
+.mobile-toggle {
+    display: none; /* Na PC skryto */
+}
+
+@media (max-width: 767px) {
+    /* Obal přepínače (skleněný efekt nahoře uprostřed) */
+    .mobile-toggle {
+        display: flex;
+        position: absolute;
+        top: 25px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 10;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 30px;
+        padding: 5px;
+        backdrop-filter: blur(10px);
+    }
+
+    /* Samotná tlačítka přepínače */
+    .toggle-btn {
+        background: transparent;
+        border: none;
+        color: #888;
+        padding: 10px 20px;
+        border-radius: 25px;
+        font-weight: bold;
+        font-size: 0.9rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    /* Aktivní stav tlačítka */
+    .toggle-btn.active {
+        color: #fff;
+        background: rgba(255, 255, 255, 0.15);
+    }
+
+    /* Skrytí sekcí na mobilu */
+    .split-side {
+        display: none; 
+        height: 100vh; /* Protože je tam jen jedna, může bezpečně zabrat 100% výšky! */
+    }
+
+    /* Zobrazení pouze aktivní sekce */
+    .split-side.active-tab {
+        display: flex;
+    }
+}
+
+@media (min-width: 768px) {
+    /* Pojistka pro PC: Obě sekce musí být vždy vidět, i když JS mění třídy */
+    .split-side {
+        display: flex !important;
+    }
+}

@@ -67,3 +67,26 @@ document.addEventListener("DOMContentLoaded", () => {
         window.requestAnimationFrame(step);
     }
 });
+
+    function switchTab(tabName) {
+        // Získáme elementy
+        const tutoringSection = document.getElementById('tutoring-section');
+        const webSection = document.getElementById('web-section');
+        const btnTutoring = document.getElementById('btn-tutoring');
+        const btnWeb = document.getElementById('btn-web');
+
+        // Resetujeme všechny třídy
+        tutoringSection.classList.remove('active-tab');
+        webSection.classList.remove('active-tab');
+        btnTutoring.classList.remove('active');
+        btnWeb.classList.remove('active');
+
+        // Přidáme aktivní třídu podle toho, co uživatel vybral
+        if (tabName === 'tutoring') {
+            tutoringSection.classList.add('active-tab');
+            btnTutoring.classList.add('active');
+        } else if (tabName === 'web') {
+            webSection.classList.add('active-tab');
+            btnWeb.classList.add('active');
+        }
+    }
