@@ -1,0 +1,436 @@
+body {
+    background: linear-gradient(135deg, var(--bg-main) 0%, #0d2424 100%);
+}
+
+header {
+    border-bottom: 1px solid #00ffcc32;
+    box-shadow: 1px;
+}
+
+nav ul li a:hover {
+    color: var(--weby-main);
+    text-shadow: 0 2px 5px rgba(0, 255, 234, 0.985)
+}
+
+/* --- HERO SEKCE --- */
+
+.hero-section {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    padding: 150px 20px 80px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.hero-top {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
+/* --- LEVÁ STRANA --- */
+
+.weby-hero {
+    flex: 1;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 25px;
+    color: var(--text-main);
+    line-height: 1.2;
+}
+
+.hero-title span {
+    color: var(--weby-main);
+}
+
+/* --- PRAVÁ STRANA --- */
+
+.stats-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.stat-item {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.stat-icon {
+    font-size: 2rem;
+}
+
+.stat-number {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--weby-main);
+    max-width: 100px;
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 600;
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    text-align: center;
+    max-width: 850px;
+    margin-top: 10px;
+}
+
+.hero-section a {
+    text-align: center;
+}
+
+.hero-section a img {
+    width: 50px;
+    transition: 0.25s ease-out;
+}
+
+.hero-section a img:hover {
+    transform: scale(1.05);
+    filter: drop-shadow(0 6px 3px var(--text-muted))
+}
+
+/* --- UNIVERZÁLNÍ STYLY  --- */
+.page-section {
+    padding: 100px 20px;
+}
+
+.page-section.bg-alt {
+    background-color: var(--bg-card);
+}
+
+.page-section.bg-black {
+    background-color: var(--bg-main)
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 60px;
+}
+
+/* --- NABÍZÍME --- */
+
+.sluzby_container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.sluzby_row {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 35px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: background-color 0.3s ease, padding-left 0.3s ease;
+}
+
+.sluzby_row:last-child {
+    border-bottom: none;
+}
+
+.row-title h3 {
+    font-size: 1.6rem;
+    color: var(--text-main);
+    margin: 0;
+}
+
+.badge {
+    display: inline-block;
+    font-size: 0.75rem;
+    color: var(--weby-main);
+    border: 1px solid var(--weby-main);
+    padding: 3px 10px;
+    border-radius: 20px;
+    margin-top: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.sluzby_row.highlighted .row-title h3 {
+    color: var(--weby-main);
+    text-shadow: 0 0 15px rgba(0, 255, 204, 0.3);
+}
+
+.row-features {
+    color: var(--text-muted);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.separator {
+    color: var(--weby-main);
+    margin: 0 8px;
+    opacity: 0.5;
+}
+
+.row-action {
+    margin-top: 10px;
+}
+
+.btn-row {
+    display: inline-block;
+    text-decoration: none;
+    background: transparent;
+    color: var(--text-main);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 10px 25px;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-row.btn-glow {
+    border-color: var(--weby-main);
+    color: var(--weby-main);
+}
+
+.btn-row:hover {
+    background: var(--text-main);
+    color: var(--bg-main);
+    border-color: var(--text-main);
+}
+
+.btn-row.btn-glow:hover {
+    background: var(--weby-main);
+    color: var(--bg-main);
+    box-shadow: 0 0 20px rgba(0, 255, 204, 0.4);
+}
+
+.price-tag {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+/* --- PROCES --- */
+
+.process-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.timeline-item {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 25px;
+    transition: transform 0.3s ease;
+}
+
+.timeline-number {
+    font-size: 4rem;
+    font-weight: 900;
+    line-height: 0.8;
+    color: transparent;
+    -webkit-text-stroke: 2px var(--weby-main);
+    opacity: 0.7;
+    transition: opacity 0.3s ease, text-shadow 0.3s ease;
+}
+
+.timeline-text {
+    flex: 1;
+}
+
+.timeline-text h3 {
+    font-size: 1.5rem;
+    color: var(--text-main);
+    margin: 0 0 10px 0;
+}
+
+.timeline-text p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--text-muted);
+    margin: 0;
+}
+
+/* --- SEKCE KONTAKT --- DODĚLAT TOHLE JE DUPLICITNÍ KÓD */
+
+.contact-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* --- PRAVÝ SLOUPEC: KONTAKTY --- */
+.contact-content {
+    flex: 1.5;
+    text-align: center;
+}
+
+.contact-content .section-title {
+    margin-bottom: 10px;
+}
+
+.contact-content p {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    color: var(--text-muted);
+    line-height: 1.6;
+}
+
+.contact-email {
+    display: inline-block;
+    font-weight: 500;
+    background-color: transparent;
+    margin-bottom: 40px;
+    padding: 14px 35px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.contact-email:hover {
+    border-color: var(--weby-main);
+    color: var(--weby-main);
+    box-shadow: 0 0 15px rgba(0, 255, 204, 0.15);
+}
+
+.social-content {
+    justify-content: center
+}
+
+/* --- Responzivita --- */
+
+@media (min-width: 1700px) {
+    .hero-top {
+        flex-direction: row;
+        align-items: center;
+        gap: 80px;
+    }
+
+    .hero-section {
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .stat-icon {
+        font-size: 2.5rem;
+    }
+
+    .stat-number {
+        font-size: 3rem;
+    }
+
+    .stat-label {
+        font-size: 1rem;
+    }
+}
+
+@media (min-width: 1320px) {
+    .hero-title {
+        font-size: 4rem;
+    }
+
+    .stat-item {
+        gap: 50px;
+    }
+
+    .stats-container {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+}
+
+@media (min-width: 1024px) {
+
+    /* Služby */
+    .sluzby_row {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: 40px 20px;
+        border-radius: 12px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .sluzby_row:hover {
+        padding-left: 30px;
+        background-color: rgba(0, 255, 204, 0.03);
+    }
+
+    .row-title {
+        flex: 0 0 25%;
+    }
+
+    .row-features {
+        flex: 1;
+        text-align: center;
+    }
+
+    .row-action {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Kontakt */
+
+    .contact-container {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    /* Proces */
+
+    .process-timeline {
+        flex-direction: row;
+        gap: 50px;
+    }
+
+    .timeline-item {
+        flex-direction: column;
+        flex: 1;
+        gap: 20px;
+    }
+
+    .timeline-number {
+        font-size: 5.5rem;
+    }
+
+    .contact-content {
+        flex: 1;
+        text-align: left;
+    }
+
+    .contact-content .section-title {
+        text-align: left;
+    }
+
+    .social-content {
+        justify-content: flex-start;
+    }
+}
