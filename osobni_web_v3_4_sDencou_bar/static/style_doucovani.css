@@ -8,7 +8,8 @@ nav ul li a:hover {
 }
 
 .navbar a:hover {
-    color: var(--doucovani-main);
+    background: var(--doucovani-main);
+    box-shadow: 0 0 15px var(--doucovani-glow)  ;
 }
 
 /* --- Úvodní --- */
