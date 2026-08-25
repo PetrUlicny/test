@@ -64,6 +64,7 @@ nav ul li a:hover {
 
 .stat-icon {
     font-size: 2rem;
+    color:var(--text-main);
 }
 
 .stat-number {
