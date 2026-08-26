@@ -73,6 +73,7 @@ header {
 nav {
     display:none;
 }
+
 .navbar {
     display: flex;
     justify-content: space-around; 
@@ -203,6 +204,7 @@ footer {
 .social-content img {
     width: 60px;
     transition: 0.3s ease-out;
+    border-radius:50%;
 }
 
 .social-content img:hover {
