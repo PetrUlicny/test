@@ -140,7 +140,6 @@ nav {
 
 .contact {
     padding: 100px 50px;
-    background-color: var(--bg-card);
     text-align: center;
 }
 
@@ -181,7 +180,6 @@ nav {
 footer {
     text-align: center;
     padding: 30px;
-    background-color: var(--bg-main);
     border-top: 1px solid rgba(255, 255, 255, 0.05);
     font-size: 0.9rem;
 }
@@ -210,3 +208,4 @@ footer {
 .social-content img:hover {
     transform: scale(1.05)
 }
+

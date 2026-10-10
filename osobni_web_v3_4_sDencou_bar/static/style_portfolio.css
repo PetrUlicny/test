@@ -1,0 +1,334 @@
+/* --- ZÁKLAD SEKCE --- */
+.portfolio-showcase {
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    padding: 8rem 1.5rem;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    overflow: hidden;
+    /* Zabrání vodorovnému posuvníku kvůli efektům */
+}
+
+.portfolio-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* --- VELKOLEPÝ NADPIS --- */
+.section-title {
+    text-align: center;
+    /* Použijeme clamp: na mobilu bude mít 3rem, na PC až obřích 5rem */
+    font-size: clamp(3rem, 6vw, 5.5rem);
+    font-weight: 900;
+    /* Maximální tloušťka */
+    letter-spacing: -2px;
+    /* Smrsknutí písmen pro moderní, ucelený vzhled */
+    text-transform: uppercase;
+    /* Vše velkým písmem pro dominanci */
+    color: var(--text-main);
+    margin-bottom: 7rem;
+    position: relative;
+    line-height: 1.1;
+}
+
+/* Zářící tyrkysové slovo */
+.section-title .highlight {
+    color: var(--weby-main);
+    /* Dvojitý stín vytvoří silný neonový efekt rozlitý do okolí */
+    text-shadow: 0 0 30px var(--weby-glow), 0 0 80px var(--weby-glow);
+    display: inline-block;
+    /* Zabrání zalomení záře */
+}
+
+/* Zajištění, aby stará linka zmizela, pokud ti tam někde zůstala */
+.section-title::after {
+    display: none;
+}
+
+/* --- JEDNOTLIVÝ PROJEKT (FLEXBOX MÍSTO GRID BOXU) --- */
+.project-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4rem;
+    margin-bottom: 10rem;
+    /* Velký prostor mezi projekty pro vzdušnost */
+}
+
+/* Střídání stran (text vlevo, obrázek vpravo) */
+.project-row.reverse {
+    flex-direction: row-reverse;
+}
+
+/* --- GALERIE OBRÁZKŮ (BEZ POZADÍ) --- */
+.project-gallery {
+    position: relative;
+    width: 55%;
+}
+
+/* Monitor */
+.img-desktop {
+    width: 90%;
+    border-radius: 8px;
+    display: block;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+    transition: transform 0.5s ease;
+}
+
+/* Mobil (překrývá monitor) */
+.img-mobile {
+    position: absolute;
+    bottom: -15%;
+    right: 0;
+    width: 28%;
+    border-radius: 12px;
+    /* Tlustý rámeček v barvě pozadí stránky vytvoří iluzi, že je mobil "vyříznutý" z monitoru */
+    border: 8px solid var(--bg-main);
+    box-shadow: -10px 20px 40px rgba(0, 0, 0, 0.8);
+    transition: transform 0.5s ease;
+}
+
+/* Hover efekty na obrázcích */
+.project-gallery .img-desktop:hover {
+    transform: scale(1.02);
+}
+
+.project-gallery .img-mobile:hover {
+    transform: translateY(-10px) scale(1.02);
+}
+
+/* Odsazení mobilu na druhou stranu u prohozeného rozvržení */
+.project-row.reverse .img-mobile {
+    right: auto;
+    left: 0;
+}
+
+.project-row.reverse .img-desktop {
+    margin-left: auto;
+    /* Zarovná monitor doprava, aby mobil vlevo přečuhoval */
+}
+
+/* --- TEXTOVÁ ČÁST --- */
+.project-content {
+    width: 45%;
+    position: relative;
+    padding: 2rem 0;
+}
+
+/* Velké číslo na pozadí textu */
+.project-number {
+    position: absolute;
+    top: -40px;
+    left: -20px;
+    font-size: 8rem;
+    font-weight: 900;
+    color: var(--bg-card);
+    z-index: 0;
+    pointer-events: none;
+}
+
+.project-title {
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    z-index: 1;
+}
+
+.project-description {
+    color: var(--text-muted);
+    line-height: 1.8;
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+/* --- TECH STACK (V OBLOUČCÍCH) --- */
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-bottom: 2.5rem;
+    position: relative;
+    z-index: 1;
+}
+
+.tech-tag {
+    background-color: transparent;
+    color: var(--text-main);
+    border: 1px solid #2a2a35;
+    /* Jemný šedý rámeček */
+    padding: 0.4rem 1rem;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    cursor: default;
+    /* Kursor ukazuje, že to není odkaz, jen tag */
+}
+
+.tech-tag:hover {
+    border-color: var(--weby-main);
+    color: var(--weby-main);
+    box-shadow: 0 0 10px var(--weby-glow);
+}
+
+/* --- MINIMALISTICKÝ ODKAZ MÍSTO TLAČÍTKA --- */
+.project-link {
+    display: inline-flex;
+    align-items: center;
+    color: var(--weby-main);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.1rem;
+    position: relative;
+    z-index: 1;
+    transition: color 0.3s ease;
+}
+
+.project-link .arrow {
+    margin-left: 8px;
+    transition: transform 0.3s ease;
+}
+
+/* Animace šipky a podtržení na hover */
+.project-link:hover .arrow {
+    transform: translateX(8px);
+}
+
+.project-link::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: var(--weby-main);
+    transition: width 0.3s ease;
+}
+
+.project-link:hover::after {
+    width: 100%;
+}
+
+/* --- VELKOLEPÝ ZÁVĚR STRÁNKY (BEZ RÁMEČKŮ) --- */
+.portfolio-closing {
+    text-align: center;
+    margin-top: 10rem;
+    padding-bottom: 8rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Drobný podnadpis, který uživatele připraví na obří odkaz */
+.closing-subtitle {
+    color: var(--text-muted);
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+/* --- OBŘÍ ODKAZ --- */
+.epic-back-link {
+    text-decoration: none;
+    /* clamp: obrovský na PC (6rem), přizpůsobený na mobilu (2.5rem) */
+    font-size: clamp(2.5rem, 8vw, 6rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 2px; /* Kladná hodnota, aby se čáry nepřekrývaly */
+    line-height: 1;
+    position: relative;
+    display: inline-block;
+    white-space: nowrap; /* Zabrání zalomení dlouhého slova na více řádků */
+}
+
+/* Základní stav textu na PC: Průhledný s obrysem */
+.epic-back-link .link-text {
+    color: transparent;
+    -webkit-text-stroke: 1px #2a2a35; /* Ztenčeno na 1px pro hezčí a ostřejší čitelnost */
+    position: relative;
+    display: inline-block;
+}
+
+/* Animující se "neonová" vrstva pro PC */
+.epic-back-link .link-text::before {
+    content: attr(data-text);
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--weby-main);
+    -webkit-text-stroke: 0;
+    width: 0%;
+    overflow: hidden;
+    white-space: nowrap;
+    transition: width 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+    text-shadow: 0 0 40px var(--weby-glow);
+}
+
+/* Hover efekt na PC */
+.epic-back-link:hover .link-text::before {
+    width: 100%;
+}
+
+/* V základu (na PC) schováme mobilní nápis DOMŮ */
+.mobile-text {
+    display: none !important;
+}
+
+/* --- RESPONZIVITA (MOBILY A TABLETY) --- */
+@media (max-width: 900px) {
+
+    .project-row,
+    .project-row.reverse {
+        flex-direction: column;
+        gap: 3rem;
+        margin-bottom: 7rem;
+    }
+
+    .project-gallery,
+    .project-content {
+        width: 100%;
+    }
+
+    .project-row.reverse .img-desktop {
+        margin-left: 0;
+    }
+
+    .project-row.reverse .img-mobile {
+        left: auto;
+        right: 0;
+    }
+
+    .project-number {
+        font-size: 6rem;
+        top: -30px;
+        left: 0;
+    }
+
+    /* --- NOVÉ: ÚPRAVY ODKAZU PRO MOBILY --- */
+    
+    /* 1. Prohození textu HLAVNÍ STRÁNKA za DOMŮ */
+    .desktop-text {
+        display: none !important; 
+    }
+    
+    .mobile-text {
+        display: inline-block !important; 
+    }
+
+    /* 2. Zrušení obrysu a nastavení rovnou svítící tyrkysové barvy */
+    .epic-back-link .link-text {
+        color: var(--weby-main) !important;
+        -webkit-text-stroke: 0 !important; /* Vypne obrysy */
+        text-shadow: 0 0 20px var(--weby-glow) !important; /* Jemná neonová záře kolem písmen */
+    }
+
+    /* 3. Vypnutí skryté vrstvy (animace hover), která už na mobilu není potřeba */
+    .epic-back-link .link-text::before {
+        display: none !important;
+    }
+}

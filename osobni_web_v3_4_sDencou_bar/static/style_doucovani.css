@@ -4,7 +4,7 @@ header {
 
 nav ul li a:hover {
     color: var(--doucovani-main);
-    text-shadow: 0 2px 5px rgba(226, 153, 43);
+    text-shadow: 0 2px 5px var(--doucovani-glow);
 }
 
 .navbar a:hover {
@@ -94,6 +94,10 @@ nav ul li a:hover {
     margin: 0 auto;
 }
 
+.cards i {
+    color:var(--doucovani-main);
+}
+
 .card {
     background-color: var(--bg-card);
     padding: 40px 30px;
@@ -116,6 +120,120 @@ nav ul li a:hover {
 .card h3 {
     font-size: 1.5rem;
     margin-bottom: 15px;
+}
+
+/* --- RECENZE --- */
+
+.reviews-section {
+    background-color: var(--bg-card);
+    color: var(--text-main);
+    padding: 5rem 1.5rem;
+    font-family: 'Segoe UI', system-ui, sans-serif; /* Můžeš nahradit vlastním fontem */
+}
+
+.recenze-container {
+    margin: 0 auto;
+}
+
+.recenze-heading {
+    text-align: center;
+}
+
+.section-title .highlight {
+    color: var(--doucovani-main);
+}
+
+/* Grid rozvržení */
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+/* Styl jednotlivé karty */
+.review-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    border-radius: 12px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+}
+
+/* Hover efekt karty */
+.review-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--doucovani-main);
+    box-shadow: 0 8px 25px var(--doucovani-glow);
+}
+
+/* Hodnocení (hvězdičky) */
+.stars {
+    color: var(--doucovani-main);
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    letter-spacing: 2px;
+}
+
+/* Text recenze */
+.review-text {
+    color: var(--text-main);
+    line-height: 1.6;
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    flex-grow: 1; /* Aby jména dole byla zarovnaná */
+    font-style: italic;
+}
+
+/* Informace o recenzentovi */
+.reviewer-info {
+    border-top: 1px solid var(--border-color);
+    padding-top: 1rem;
+}
+
+.reviews-actions {
+    text-align: center;
+    margin-top: 4rem;
+}
+
+.reviewer-name {
+    font-weight: 600;
+    color: var(--text-main);
+    font-size: 1.1rem;
+    margin-bottom: 0.25rem;
+}
+
+.reviewer-role {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/* --- Recenze loading... --- */
+
+.loading-text {
+    width: 100%;
+    text-align: center;
+    padding: 4rem 0;
+    color: var(--doucovani-main);
+    font-size: 1.2rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    animation: pulse 1.5s infinite ease-in-out; 
+}
+
+/* Samotná animace svícení */
+@keyframes pulse {
+    0% { opacity: 0.3; }
+    50% { 
+        opacity: 1; 
+        text-shadow: 0 0 20px var(--doucovani-glow); 
+    }
+    100% { opacity: 0.3; }
 }
 
 /* --- Kontakt --- */
@@ -150,6 +268,12 @@ nav ul li a:hover {
 
 .social-content {
     justify-content: center;
+}
+
+/* --- Footer --- */
+
+footer {
+    background-color: var(--bg-card);
 }
 
 /* --- Responzivita --- */

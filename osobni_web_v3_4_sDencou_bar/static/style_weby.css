@@ -3,7 +3,7 @@ body {
 }
 
 header {
-    border-bottom: 1px solid #00ffcc32;
+    border-bottom: 1px solid var(--weby-glow);
     box-shadow: 1px;
 }
 
@@ -271,7 +271,17 @@ nav ul li a:hover {
     margin: 0;
 }
 
-/* --- SEKCE KONTAKT --- DODĚLAT TOHLE JE DUPLICITNÍ KÓD */
+.contact-image img {
+    width: 300px !important;
+    height: 300px !important;
+}
+
+@media (min-width:1024px) {
+    .contact-image img {
+    width: 400px !important;
+    height: 400px !important;
+}
+}
 
 .contact-container {
     display: flex;
