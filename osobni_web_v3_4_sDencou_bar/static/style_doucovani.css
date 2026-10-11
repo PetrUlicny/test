@@ -143,7 +143,6 @@ nav ul li a:hover {
     color: var(--doucovani-main);
 }
 
-/* Grid rozvržení */
 .reviews-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -152,7 +151,6 @@ nav ul li a:hover {
     margin: 0 auto;
 }
 
-/* Styl jednotlivé karty */
 .review-card {
     background-color: var(--bg-card);
     border: 1px solid var(--border-color);
@@ -164,14 +162,12 @@ nav ul li a:hover {
     transition: all 0.3s ease;
 }
 
-/* Hover efekt karty */
 .review-card:hover {
     transform: translateY(-5px);
     border-color: var(--doucovani-main);
     box-shadow: 0 8px 25px var(--doucovani-glow);
 }
 
-/* Hodnocení (hvězdičky) */
 .stars {
     color: var(--doucovani-main);
     font-size: 1.25rem;
@@ -179,7 +175,11 @@ nav ul li a:hover {
     letter-spacing: 2px;
 }
 
-/* Text recenze */
+.subject-tag {
+    font-weight: bold;
+    margin-bottom:10px;
+}
+
 .review-text {
     color: var(--text-main);
     line-height: 1.6;

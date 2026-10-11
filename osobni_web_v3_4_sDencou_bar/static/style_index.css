@@ -161,6 +161,29 @@ header {
     background: linear-gradient(0deg, var(--bg-main) 0%, #0a1a1a 100%);
 }
 
+/* --- Jmeno --- */
+
+.name {
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Posune jméno přesně na svůj vlastní střed */
+    z-index:10;
+}
+
+.name p {
+    background: rgba(255,255,255,0.2); 
+    padding: 5px 20px; 
+    border-radius: 10px;
+    color:rgba(255,255,255,0.9);
+    text-align: center;
+    font-weight: bold;
+    letter-spacing: 2px;
+    font-size:1.5rem;
+    box-shadow: 2px 2px 5px black;
+}
+
+
 /* --- DESKTOP (od 768px) --- */
 @media (min-width: 768px) {
     .mobile-toggle {
@@ -191,5 +214,13 @@ header {
 
     .web-side:hover {
         background: linear-gradient(0deg, var(--bg-main) 0%, #0d2424 100%);
+    }
+
+    .name {
+        top:50%;
+    }
+
+    .name p {
+        font-size:1rem;
     }
 }
