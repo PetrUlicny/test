@@ -179,7 +179,6 @@ header {
     text-align: center;
     font-weight: bold;
     letter-spacing: 2px;
-    font-size:1.5rem;
     box-shadow: 2px 2px 5px black;
 }
 
@@ -218,9 +217,5 @@ header {
 
     .name {
         top:50%;
-    }
-
-    .name p {
-        font-size:1rem;
     }
 }
